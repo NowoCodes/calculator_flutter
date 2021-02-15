@@ -98,7 +98,7 @@ class _CalcHome1State extends State<CalcHome1> {
                 child: Container(
                   child: Text('Second Page'),
                 ),
-                color: Colors.red,
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pushNamed(context, '/1');
                 },
