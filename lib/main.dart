@@ -1,7 +1,8 @@
+import 'package:calculator/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'display/calc_screen3.dart';
+import 'display/homescreen.dart';
 
 void main() {
   runApp(MyCalc());
@@ -18,10 +19,13 @@ class MyCalc extends StatelessWidget {
       title: 'My Calculator',
       theme: ThemeData.light().copyWith(
         primaryColor: Colors.white,
-        // scaffoldBackgroundColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
+        textTheme: TextTheme(
+          bodyText2: kResultTextStyle,
+        ),
       ),
       debugShowCheckedModeBanner: false,
-      home: CalcHome3(),
+      home: HomeScreen(),
     );
   }
 }
