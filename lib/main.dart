@@ -22,7 +22,6 @@ class MyCalc extends StatelessWidget {
           // scaffoldBackgroundColor: Color(0xFF0A0E21),
         ),
         debugShowCheckedModeBanner: false,
-        // home: CalcHome(),
         initialRoute: '/',
         routes: {
           '/': (context) => CalcHome3(),
