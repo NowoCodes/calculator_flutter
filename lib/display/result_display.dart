@@ -1,5 +1,6 @@
 import 'package:calculator/constants.dart';
 import 'package:flutter/material.dart';
+
 import 'calc_screen1.dart';
 
 class ResultDisplay extends StatelessWidget {
@@ -12,44 +13,48 @@ class ResultDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        new Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: new TextField(
-              decoration: new InputDecoration.collapsed(
-                  hintText: userInput,
-                  hintStyle: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'RobotoMono',
-                  )),
-              style: TextStyle(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: new TextField(
+            decoration: new InputDecoration.collapsed(
+              hintText: userInput,
+              hintStyle: TextStyle(
                 fontSize: 30,
                 fontFamily: 'RobotoMono',
               ),
-              textAlign: TextAlign.right,
-              controller: textControllerInput,
-              onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
-            )),
-        new Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: TextField(
-              decoration: new InputDecoration.collapsed(
-                  hintText: answer,
-                  // fillColor: Colors.deepPurpleAccent,
-                  hintStyle: TextStyle(fontFamily: 'RobotoMono')),
-              textInputAction: TextInputAction.none,
-              keyboardType: TextInputType.number,
-              style: TextStyle(
-                  fontSize: 32,
-                  fontFamily: 'RobotoMono',
-                  fontWeight: FontWeight.bold
-                  // color: Colors.deepPurpleAccent
-                  ),
-              textAlign: TextAlign.right,
-              controller: textControllerResult,
-              onTap: () {
-                FocusScope.of(context).requestFocus(new FocusNode());
-              },
-            )),
+            ),
+            style: TextStyle(
+              fontSize: 30,
+              fontFamily: 'RobotoMono',
+            ),
+            textAlign: TextAlign.right,
+            controller: textControllerInput,
+            onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: TextField(
+            decoration: new InputDecoration.collapsed(
+              hintText: answer,
+              // fillColor: Colors.deepPurpleAccent,
+              hintStyle: TextStyle(fontFamily: 'RobotoMono'),
+            ),
+            textInputAction: TextInputAction.none,
+            keyboardType: TextInputType.number,
+            style: TextStyle(
+              fontSize: 32,
+              fontFamily: 'RobotoMono',
+              fontWeight: FontWeight.bold,
+              // color: Colors.deepPurpleAccent
+            ),
+            textAlign: TextAlign.right,
+            controller: textControllerResult,
+            onTap: () {
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+          ),
+        ),
       ],
     );
   }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
+
 import '../components/buttons.dart';
 import '../constants.dart';
 import 'result_display.dart';
-import 'package:math_expressions/math_expressions.dart';
 
 class CalcHome2 extends StatefulWidget {
   @override
