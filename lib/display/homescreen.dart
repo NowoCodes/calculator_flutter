@@ -1,5 +1,6 @@
 import 'package:calculator/calc_logic.dart';
 import 'package:calculator/components/calc_button.dart';
+import 'package:calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,8 +15,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CALC'),
-        backgroundColor: Colors.lightBlueAccent,
+        title: Text('ARITHMETIC CALCULATOR'),
+        backgroundColor: Color(0xFF0A0E21),
       ),
       body: SafeArea(
         child: Container(
@@ -29,11 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Expanded(
                     child: Text(
                       calc.finalResult,
-                      style: TextStyle(
-                        // color: Colors.black,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w700,
-                      ),
                     ),
                   ),
                 ),
@@ -234,17 +230,12 @@ class _HomeScreenState extends State<HomeScreen> {
           margin: EdgeInsets.all(10.0),
           child: ElevatedButton(
             onPressed: () {
-              calc.setNumber("0");
+              setState(() {
+                calc.setNumber("0");
+              });
             },
             style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25),
-                  topRight: Radius.circular(25),
-                  bottomRight: Radius.circular(40),
-                  bottomLeft: Radius.circular(40),
-                ),
-              ),
+              shape: kButtonShape,
               padding: EdgeInsets.fromLTRB(34, 20, 118, 20),
               primary: Colors.grey[850],
               textStyle: TextStyle(fontSize: 35.0),

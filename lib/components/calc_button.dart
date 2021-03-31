@@ -1,3 +1,4 @@
+import 'package:calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class CalcButtons extends StatelessWidget {
@@ -20,16 +21,9 @@ class CalcButtons extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: color,
           elevation: 6.0,
-          textStyle: TextStyle(fontSize: 25),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25),
-              topRight: Radius.circular(25),
-              bottomRight: Radius.circular(40),
-              bottomLeft: Radius.circular(40),
-            ),
-          ),
-          minimumSize: Size(70, 70),
+          textStyle: TextStyle(fontSize: 25.0),
+          shape: kButtonShape,
+          minimumSize: Size(70.0, 70.0),
         ),
       ),
     );
