@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'display/calc_screen1.dart';
+
 import 'display/calc_screen2.dart';
+import 'display/calc_screen3.dart';
 
 void main() {
   runApp(MyCalc());
@@ -24,7 +25,7 @@ class MyCalc extends StatelessWidget {
         // home: CalcHome(),
         initialRoute: '/',
         routes: {
-          '/': (context) => CalcHome1(),
+          '/': (context) => CalcHome3(),
           '/1': (context) => CalcHome2(),
         });
   }
