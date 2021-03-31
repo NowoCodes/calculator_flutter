@@ -2,12 +2,12 @@ import 'package:calculator/calc_logic.dart';
 import 'package:calculator/components/calc_button.dart';
 import 'package:flutter/material.dart';
 
-class CalcHome3 extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _CalcHome3State createState() => _CalcHome3State();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _CalcHome3State extends State<CalcHome3> {
+class _HomeScreenState extends State<HomeScreen> {
   Logic calc = Logic();
 
   @override
@@ -30,7 +30,7 @@ class _CalcHome3State extends State<CalcHome3> {
                     child: Text(
                       calc.finalResult,
                       style: TextStyle(
-                        color: Colors.black,
+                        // color: Colors.black,
                         fontSize: 40,
                         fontWeight: FontWeight.w700,
                       ),
