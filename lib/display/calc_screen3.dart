@@ -28,7 +28,7 @@ class _CalcHome3State extends State<CalcHome3> {
                   alignment: Alignment.centerRight,
                   child: Expanded(
                     child: Text(
-                      'Wahala',
+                      calc.finalResult,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 30,
@@ -42,6 +42,7 @@ class _CalcHome3State extends State<CalcHome3> {
                 _secondRow(),
                 _thirdRow(),
                 _fourthRow(),
+                _fifthRow(),
               ],
             )),
       ),
@@ -55,25 +56,21 @@ class _CalcHome3State extends State<CalcHome3> {
         CalcButtons(
           btnText: 'AC',
           color: Colors.redAccent,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
         CalcButtons(
           btnText: '+/-',
           color: Colors.grey,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
         CalcButtons(
           btnText: '%',
           color: Colors.grey,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
         CalcButtons(
           btnText: '/',
           color: Colors.green,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
       ],
@@ -87,25 +84,21 @@ class _CalcHome3State extends State<CalcHome3> {
         CalcButtons(
           btnText: '7',
           color: Colors.grey,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
         CalcButtons(
           btnText: '8',
           color: Colors.grey,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
         CalcButtons(
           btnText: '9',
           color: Colors.grey,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
         CalcButtons(
           btnText: '*',
           color: Colors.grey,
-          textColor: Colors.black87,
           onPressed: () {},
         ),
       ],
@@ -119,26 +112,38 @@ class _CalcHome3State extends State<CalcHome3> {
         CalcButtons(
           btnText: '6',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("6");
+            });
+          },
         ),
         CalcButtons(
           btnText: '5',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("5");
+            });
+          },
         ),
         CalcButtons(
           btnText: '4',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("4");
+            });
+          },
         ),
         CalcButtons(
           btnText: '-',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.add();
+            });
+          },
         ),
       ],
     );
@@ -151,26 +156,82 @@ class _CalcHome3State extends State<CalcHome3> {
         CalcButtons(
           btnText: '1',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("1");
+            });
+          },
         ),
         CalcButtons(
           btnText: '2',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("2");
+            });
+          },
         ),
         CalcButtons(
           btnText: '3',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("3");
+            });
+          },
         ),
         CalcButtons(
           btnText: '+',
           color: Colors.grey,
-          textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.add();
+            });
+          },
+        ),
+      ],
+    );
+  }
+
+  Row _fifthRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Container(
+          margin: EdgeInsets.all(10.0),
+          child: ElevatedButton(
+            onPressed: () {
+              calc.setNumber("0");
+            },
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              padding: EdgeInsets.fromLTRB(34, 20, 118, 20),
+              primary: Colors.grey[850],
+              textStyle: TextStyle(fontSize: 35.0),
+            ),
+            child: Text('0'),
+          ),
+        ),
+        CalcButtons(
+          btnText: '.',
+          color: Colors.grey,
+          onPressed: () {
+            setState(() {
+              calc.decimal();
+            });
+          },
+        ),
+        CalcButtons(
+          btnText: '=',
+          color: Colors.grey,
+          onPressed: () {
+            setState(() {
+              calc.execute();
+            });
+          },
         ),
       ],
     );

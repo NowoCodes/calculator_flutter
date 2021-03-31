@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class CalcButtons extends StatelessWidget {
   CalcButtons({
     @required this.btnText,
-    this.color,
-    @required this.textColor,
+    @required this.color,
     @required this.onPressed,
   });
   final String btnText;
   final Color color;
-  final Color textColor;
   final Function onPressed;
 
   @override
@@ -22,7 +20,7 @@ class CalcButtons extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: color,
           elevation: 6.0,
-          textStyle: TextStyle(color: textColor, fontSize: 25),
+          textStyle: TextStyle(fontSize: 25),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),
