@@ -19,6 +19,21 @@ class _CalcHome3State extends State<CalcHome3> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  alignment: Alignment.centerRight,
+                  child: Expanded(
+                    child: Text(
+                      'Wahala',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -30,19 +45,19 @@ class _CalcHome3State extends State<CalcHome3> {
                     ),
                     CalcButtons(
                       btnText: '+/-',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '%',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '/',
-                      color: Colors.redAccent,
+                      color: Colors.green,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
@@ -53,25 +68,25 @@ class _CalcHome3State extends State<CalcHome3> {
                   children: [
                     CalcButtons(
                       btnText: '7',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '8',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '9',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '*',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
@@ -82,25 +97,25 @@ class _CalcHome3State extends State<CalcHome3> {
                   children: [
                     CalcButtons(
                       btnText: '6',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '5',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '4',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '-',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
@@ -111,25 +126,25 @@ class _CalcHome3State extends State<CalcHome3> {
                   children: [
                     CalcButtons(
                       btnText: '1',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '2',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '3',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
                     CalcButtons(
                       btnText: '+',
-                      color: Colors.redAccent,
+                      color: Colors.grey,
                       textColor: Colors.black87,
                       onPressed: () {},
                     ),
@@ -145,7 +160,7 @@ class _CalcHome3State extends State<CalcHome3> {
 class CalcButtons extends StatelessWidget {
   CalcButtons({
     @required this.btnText,
-    @required this.color,
+    this.color,
     @required this.textColor,
     @required this.onPressed,
   });
@@ -156,17 +171,20 @@ class CalcButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: Text(btnText),
-      style: ElevatedButton.styleFrom(
-        primary: color == color ? color : Colors.red,
-        elevation: 6.0,
-        textStyle: TextStyle(color: textColor, fontSize: 25),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
+    return Container(
+      margin: EdgeInsets.all(10.0),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        child: Text(btnText),
+        style: ElevatedButton.styleFrom(
+          primary: color,
+          elevation: 6.0,
+          textStyle: TextStyle(color: textColor, fontSize: 25),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          minimumSize: Size(70, 70),
         ),
-        alignment: Alignment.center,
       ),
     );
   }
