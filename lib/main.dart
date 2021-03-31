@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'display/calc_screen2.dart';
 import 'display/calc_screen3.dart';
 
 void main() {
@@ -16,16 +15,13 @@ class MyCalc extends StatelessWidget {
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
     return MaterialApp(
-        title: 'My Calculator',
-        theme: ThemeData.light().copyWith(
-          primaryColor: Colors.white,
-          // scaffoldBackgroundColor: Color(0xFF0A0E21),
-        ),
-        debugShowCheckedModeBanner: false,
-        initialRoute: '/',
-        routes: {
-          '/': (context) => CalcHome3(),
-          '/1': (context) => CalcHome2(),
-        });
+      title: 'My Calculator',
+      theme: ThemeData.light().copyWith(
+        primaryColor: Colors.white,
+        // scaffoldBackgroundColor: Color(0xFF0A0E21),
+      ),
+      debugShowCheckedModeBanner: false,
+      home: CalcHome3(),
+    );
   }
 }
