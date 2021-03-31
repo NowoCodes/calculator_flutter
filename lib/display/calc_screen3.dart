@@ -56,22 +56,38 @@ class _CalcHome3State extends State<CalcHome3> {
         CalcButtons(
           btnText: 'AC',
           color: Colors.redAccent,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.reset();
+            });
+          },
         ),
         CalcButtons(
           btnText: '+/-',
           color: Colors.grey,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.negative();
+            });
+          },
         ),
         CalcButtons(
           btnText: '%',
           color: Colors.grey,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.percentage();
+            });
+          },
         ),
         CalcButtons(
           btnText: '/',
           color: Colors.green,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.div();
+            });
+          },
         ),
       ],
     );
@@ -84,22 +100,38 @@ class _CalcHome3State extends State<CalcHome3> {
         CalcButtons(
           btnText: '7',
           color: Colors.grey,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("7");
+            });
+          },
         ),
         CalcButtons(
           btnText: '8',
           color: Colors.grey,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("8");
+            });
+          },
         ),
         CalcButtons(
           btnText: '9',
           color: Colors.grey,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.setNumber("9");
+            });
+          },
         ),
         CalcButtons(
           btnText: '*',
           color: Colors.grey,
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              calc.mul();
+            });
+          },
         ),
       ],
     );
@@ -141,7 +173,7 @@ class _CalcHome3State extends State<CalcHome3> {
           color: Colors.grey,
           onPressed: () {
             setState(() {
-              calc.add();
+              calc.sub();
             });
           },
         ),
