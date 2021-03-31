@@ -21,8 +21,14 @@ class CalcButtons extends StatelessWidget {
           primary: color,
           elevation: 6.0,
           textStyle: TextStyle(fontSize: 25),
+          // shape: CircleBorder(),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25),
+              topRight: Radius.circular(25),
+              bottomRight: Radius.circular(40),
+              bottomLeft: Radius.circular(40),
+            ),
           ),
           minimumSize: Size(70, 70),
         ),
@@ -30,3 +36,13 @@ class CalcButtons extends StatelessWidget {
     );
   }
 }
+
+// style: kNumberButtonTextStyle,
+// constraints: BoxConstraints.tightFor(
+// width: 70.0,
+// height: 70.0,
+// ),
+// shape: CircleBorder(),
+// fillColor: kButtonColor2,
+// ),
+// ),

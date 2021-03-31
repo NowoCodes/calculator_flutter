@@ -238,7 +238,12 @@ class _CalcHome3State extends State<CalcHome3> {
             },
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                  bottomRight: Radius.circular(40),
+                  bottomLeft: Radius.circular(40),
+                ),
               ),
               padding: EdgeInsets.fromLTRB(34, 20, 118, 20),
               primary: Colors.grey[850],
