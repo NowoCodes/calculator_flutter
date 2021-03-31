@@ -31,7 +31,7 @@ class _CalcHome3State extends State<CalcHome3> {
                       calc.finalResult,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 30,
+                        fontSize: 40,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -82,7 +82,7 @@ class _CalcHome3State extends State<CalcHome3> {
         ),
         CalcButtons(
           btnText: '/',
-          color: Colors.green,
+          color: Colors.grey,
           onPressed: () {
             setState(() {
               calc.div();
@@ -263,7 +263,7 @@ class _CalcHome3State extends State<CalcHome3> {
         ),
         CalcButtons(
           btnText: '=',
-          color: Colors.grey,
+          color: Colors.green,
           onPressed: () {
             setState(() {
               calc.execute();
